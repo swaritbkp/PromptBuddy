@@ -35,8 +35,8 @@ def get_api_key() -> Optional[str]:
     if os.environ.get("GEMINI_API_KEY"):
         return os.environ.get("GEMINI_API_KEY")
         
-    # FALLBACK: Bilota System Key (Last Resort)
-    return "AIzaSyDyGvHbBGQnt6rNiV3k-DtHol-eQo_xjIc"
+    # FALLBACK: Return None if not found
+    return None
 
 def call_gemini(prompt: str, model_name: str = "gemini-1.5-flash", system_instruction: str = None) -> str:
     """
