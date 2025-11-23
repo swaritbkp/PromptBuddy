@@ -234,11 +234,6 @@ def render_sidebar():
         
         st.divider()
         
-        # Theme Toggle
-        st.session_state.theme = st.radio("🎨 Theme", ["Light", "Dark"], horizontal=True, index=0 if st.session_state.get("theme", "Light") == "Light" else 1)
-        
-        st.divider()
-        
         if st.button("🗑️ Clear History", use_container_width=True):
             st.session_state.prompt_history = []
             try:
