@@ -14,6 +14,32 @@ from datetime import datetime
 import io
 import PyPDF2
 from PIL import Image
+from typing import Optional, Tuple, Dict, Any, List
+import os
+
+def get_api_key() -> Optional[str]:
+    """Retrieve API Key with robust fallback"""
+    # Try to get from secrets (Nested [gemini] api_key)
+    try:
+        return st.secrets["gemini"]["api_key"]
+    except:
+        pass
+        
+    # Try flat GEMINI_API_KEY
+    try:
+        return st.secrets["GEMINI_API_KEY"]
+    except:
+        pass
+        
+    # Try Environment Variable
+    if os.environ.get("GEMINI_API_KEY"):
+        return os.environ.get("GEMINI_API_KEY")
+        
+    # FALLBACK: Bilota System Key (Last Resort)
+    return "AIzaSyDyGvHbBGQnt6rNiV3k-DtHol-eQo_xjIc"
+
+def call_gemini(prompt: str, model_name: str = "gemini-1.5-flash", system_instruction: str = None) -> str:
+    """
     Call Gemini API with error handling.
     
     Args:
@@ -42,6 +68,18 @@ from PIL import Image
 
 def robust_call_gemini(prompt: str, model_name: str = "gemini-1.5-flash", max_retries: int = 3) -> Tuple[Optional[str], Optional[str]]:
     """
+    Call Gemini with retry logic and error handling.
+    
+    Returns:
+        Tuple (result, error_message)
+    """
+    for attempt in range(max_retries):
+        try:
+            result = call_gemini(prompt, model_name)
+            if not result.startswith("Error"):
+                return result, None
+        except Exception as e:
+            pass
             
         if attempt < max_retries - 1:
             time.sleep(2 ** attempt)  # Exponential backoff
