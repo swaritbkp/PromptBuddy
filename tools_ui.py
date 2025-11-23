@@ -349,9 +349,16 @@ def render_tools_page():
                 else:
                     st.warning("⚠️ Consider optimizing this prompt.")
                     # CONTEXTUAL INTELLIGENCE: Smart suggestion
-                    if st.button("✨ Optimize Now", type="primary", key="optimize_from_scorer"):
-                        st.info("👉 Opening Optimizer tab... Copy your prompt and go to the Optimizer tab!")
-                        st.session_state.prompt_to_optimize = prompt_to_score
+                    if st.button("✨ Auto-Fix with Gemini 3", type="primary", key="optimize_from_scorer"):
+                        with st.spinner("Gemini 3 is re-architecting your prompt..."):
+                            optimized = logic.optimize_for_model(prompt_to_score, "Gemini", 7, 8, 7)
+                            st.session_state.prompt_to_optimize = optimized
+                        
+                        st.success("✨ Optimization Complete!")
+                        st.text_area("Optimized Prompt:", value=optimized, height=150)
+                        if st.button("Use This", key="use_optimized_inline"):
+                            st.session_state.prompt_to_optimize = optimized
+                            st.info("Copied to Optimizer for further refinement!")
             else:
                 st.warning("Please enter a prompt.")
 

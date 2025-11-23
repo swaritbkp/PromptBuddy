@@ -347,7 +347,7 @@ def analyze_image(image: Image.Image, prompt: str = "Describe this image in deta
 
 def generate_image(prompt: str) -> str:
     """Generate image from text (Placeholder / Fallback)"""
-    return "⚠️ Image generation requires a specific Imagen model endpoint. Currently configured for text/vision only."
+    return "✨ Image Generation coming in Phase 9 (Requires Imagen 3 access). For now, try Visual Studio to analyze images!"
 
 def process_document(uploaded_file: Any) -> str:
     """Extract text from PDF or Text file"""
