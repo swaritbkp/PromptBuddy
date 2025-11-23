@@ -15,8 +15,8 @@ import time
 import io
 import pyperclip
 import utils
-import logic  # New logic module
-import ui_components # New UI module
+import logic
+import ui_components
 
 def render_tools_page():
     st.title("🛠️ Prompt Tools")
