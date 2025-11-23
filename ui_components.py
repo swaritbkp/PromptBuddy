@@ -228,7 +228,8 @@ def render_sidebar():
             st.rerun()
         
         st.divider()
-        st.caption("⚡ Built with Antigravity")
+        st.caption("⚡ Built by Bilota AI")
+        st.caption("📧 Swarit.bkp@gmail.com")
 
 def render_about_page():
     """Render the About Bilota AI page"""
@@ -262,6 +263,8 @@ def render_about_page():
         - **PromptBuddy**: Your personal AI prompt assistant.
         - **Bilota Vision**: Advanced image analysis tools.
         - **Bilota Enterprise**: Custom AI solutions for business.
+        
+        **Contact Us:** [Swarit.bkp@gmail.com](mailto:Swarit.bkp@gmail.com)
         """)
         
     st.divider()
