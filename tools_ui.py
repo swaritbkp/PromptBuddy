@@ -128,17 +128,22 @@ def render_tools_page():
         
         elif mode == "🖼️ Image":
             st.info("👉 Go to the **Visual Studio** tab for advanced image prompting.")
-            
+        
+        elif mode == "📄 Document":
+            st.info("👉 Go to the **Doc Analyzer** tab for document processing.")
+
+    # 2. Visual Studio
+    with tabs[1]:
+        st.header("🎨 Visual Studio")
+        st.markdown("Reverse-engineer images into professional prompts using **Gemini 3 Vision**.")
+        
+        vs_tab1, vs_tab2 = st.tabs(["🔍 Analyze", "🎨 Generate"])
+        
+        with vs_tab1:
+            uploaded_img = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
             if uploaded_img:
                 image = Image.open(uploaded_img)
                 st.image(image, caption="Uploaded Image", use_container_width=True)
-                
-                # Auto-upload to cloud (Phase 7)
-                if 'user' in st.session_state and st.session_state.user and not st.session_state.user.get('local'):
-                    with st.spinner("☁️ Saving to cloud..."):
-                        url = utils.upload_file(uploaded_img, st.session_state.user['uid'])
-                        if url:
-                            st.toast("Saved to Asset Library!", icon="☁️")
                 
                 analysis_prompt = st.text_input("Prompt for Analysis", "Describe this image in detail and suggest 3 prompts to recreate it.")
                 
