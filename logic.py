@@ -340,7 +340,26 @@ def analyze_image(image: Image.Image, prompt: str = "Describe this image in deta
     
     try:
         model = genai.GenerativeModel('gemini-1.5-flash')
-        response = model.generate_content([prompt, image])
+        # Reverse Prompt Engineering
+        structured_prompt = f"""
+        Analyze this image and act as an expert Prompt Engineer. 
+        Reverse-engineer the exact prompt that would be needed to generate this image using a high-end AI model like Midjourney v6 or DALL-E 3.
+        
+        {prompt}
+        
+        Output the result in this structured format:
+        
+        **🎨 Main Subject:** [Detailed description]
+        **🖌️ Art Style:** [e.g., Cyberpunk, Oil Painting, 3D Render]
+        **💡 Lighting & Atmosphere:** [e.g., Cinematic lighting, moody, golden hour]
+        **📷 Camera/View:** [e.g., Wide angle, macro, drone shot]
+        
+        **✨ Optimized Generation Prompt:**
+        ```
+        [Insert the full, high-fidelity prompt here]
+        ```
+        """
+        response = model.generate_content([structured_prompt, image])
         return response.text
     except Exception as e:
         return f"Error analyzing image: {e}"

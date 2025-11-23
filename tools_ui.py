@@ -556,17 +556,6 @@ def render_tools_page():
                 
                 st.success(f"### 🏆 Verdict\n{verdict}")
             else:
-                st.warning("Please enter both prompts.")
-
-    # 10. History
-    with tabs[9]:
-        st.header("📚 Prompt History")
-        st.markdown("View your prompt history and search for similar prompts using semantic memory.")
-        
-        # Filter by Project
-        current_proj_id = st.session_state.get("current_project", {}).get("id", "default")
-        filtered_history = [
-            h for h in st.session_state.prompt_history 
             if h.get("project_id", "default") == current_proj_id
         ]
         
