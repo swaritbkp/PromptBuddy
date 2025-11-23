@@ -463,60 +463,7 @@ def render_tools_page():
                 else:
                     st.info(f"ℹ️ Reached {max_iterations} iterations. Final score: {final_score}/{target_score}")
             else:
-            if test_prompt:
-                start_time = time.time()
-                with st.spinner("Running prompt on Gemini..."):
-                    response = logic.call_gemini(test_prompt, st.session_state.selected_model)
-                latency = round(time.time() - start_time, 2)
-                
-                st.divider()
-                
-                st.markdown("### Response")
-                st.write(response)
-                
-                # Metrics
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    st.metric("⏱️ Latency", f"{latency}s")
-                with col2:
-                    token_estimate = len(response.split())
-                    st.metric("📝 Tokens (est.)", token_estimate)
-                with col3:
-                    st.metric("🤖 Model", st.session_state.selected_model)
-                
-                # Reflection Mode
-                if enable_reflection:
-                    st.divider()
-                    with st.expander("🧠 AI Reflection", expanded=True):
-                        with st.spinner("AI is reflecting on its response..."):
-                            reflection = logic.reflect_on_response(test_prompt, response)
-                        st.markdown(reflection)
-                
-                # Actions
-                col_a, col_b = st.columns(2)
-                with col_a:
-                    if st.button("📋 Copy Response"):
-                        st.success("Copied!")
-                with col_b:
-                    if st.button("💾 Save to History"):
-                        entry = {
-                            "timestamp": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S"),
-                            "prompt": test_prompt,
-                            "model": st.session_state.selected_model,
-                            "output": response,
-                            "score": 0,
-                            "latency": latency,
-                            "project_id": st.session_state.get("current_project", {}).get("id", "default")
-                        }
-                        st.session_state.prompt_history.append(entry)
-                        # Sync logic
-                        if 'user' in st.session_state and st.session_state.user and not st.session_state.user.get('local'):
-                            utils.sync_history_to_firestore(st.session_state.prompt_history, st.session_state.user['uid'])
-                        else:
-                            utils.export_to_json(st.session_state.prompt_history, "history.json")
-                        st.success("Saved!")
-            else:
-                st.warning("Please enter a prompt to test.")
+                st.warning("Please enter a prompt to evolve.")
 
     # 9. Compare
     with tabs[8]:
