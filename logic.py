@@ -42,21 +42,6 @@ from PIL import Image
 
 def robust_call_gemini(prompt: str, model_name: str = "gemini-1.5-flash", max_retries: int = 3) -> Tuple[Optional[str], Optional[str]]:
     """
-    Call Gemini with retry logic and error handling.
-    
-    Returns:
-        Tuple (result, error_message)
-    """
-    for attempt in range(max_retries):
-        try:
-            result = call_gemini(prompt, model_name)
-            if not result.startswith("Error"):
-                return result, None
-            # If it's a specific error we might want to retry, otherwise maybe break
-            # For now, we treat "Error..." string as a failure to retry if it's transient, 
-            # but call_gemini catches exceptions. Let's assume we retry on any error.
-        except Exception as e:
-            pass # call_gemini handles exceptions, but if we change that, this catches it.
             
         if attempt < max_retries - 1:
             time.sleep(2 ** attempt)  # Exponential backoff

@@ -220,6 +220,11 @@ def render_sidebar():
             st.caption("By Bilota AI")
 
         st.divider()
+
+        # Authentication
+        auth.auth_sidebar()
+
+        st.divider()
         
         # Always use system Gemini API key
         st.info("✅ Using Bilota AI System")
