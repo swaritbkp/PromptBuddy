@@ -40,14 +40,14 @@ def render_tools_page():
     # 1. Prompt Lab
     with tabs[0]:
         st.header("🧠 Prompt Lab")
-        st.markdown("Create, refine, and manage prompts for any modality.")
+        st.markdown("Design high-fidelity prompts optimized for **Gemini 3's** advanced reasoning capabilities.")
         
         mode = st.radio("Mode", ["📝 Text", "🖼️ Image", "📄 Document"], horizontal=True)
         
         if mode == "📝 Text":
             # ONBOARDING HINT
             if not st.session_state.get('onboarding_complete', False):
-                st.info("👋 **New here?** Describe what you want to achieve below, and I'll generate a professional prompt for you. You can then optimize, test, or save it!")
+                st.info("👋 **Welcome to the Future!** Describe your goal below, and I'll architect a prompt specifically designed to unlock **Gemini 3's** full potential.")
                 if st.button("✔️ Got it!", key="dismiss_onboarding"):
                     st.session_state.onboarding_complete = True
                     st.rerun()
@@ -129,18 +129,6 @@ def render_tools_page():
         elif mode == "🖼️ Image":
             st.info("👉 Go to the **Visual Studio** tab for advanced image prompting.")
             
-        elif mode == "📄 Document":
-            st.info("👉 Go to the **Doc Analyzer** tab for document processing.")
-
-    # 2. Visual Studio
-    with tabs[1]:
-        st.header("🎨 Visual Studio")
-        st.markdown("Analyze images or generate visual content.")
-        
-        vs_tab1, vs_tab2 = st.tabs(["👀 Analyze Image", "🎨 Generate Image"])
-        
-        with vs_tab1:
-            uploaded_img = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png"])
             if uploaded_img:
                 image = Image.open(uploaded_img)
                 st.image(image, caption="Uploaded Image", use_container_width=True)
@@ -468,17 +456,6 @@ def render_tools_page():
                 else:
                     st.info(f"ℹ️ Reached {max_iterations} iterations. Final score: {final_score}/{target_score}")
             else:
-                st.warning("Please enter a prompt to evolve.")
-
-    # 8. Tester
-    with tabs[7]:
-        st.header("🧪 Prompt Tester")
-        st.markdown("Test your prompt and see the AI response with metrics.")
-        
-        test_prompt = st.text_area("Prompt to Test", height=150, key="tester_input")
-        enable_reflection = st.checkbox("Enable Reflection Mode (AI self-critique)", value=False)
-        
-        if st.button("▶️ Run Test", type="primary", use_container_width=True):
             if test_prompt:
                 start_time = time.time()
                 with st.spinner("Running prompt on Gemini..."):

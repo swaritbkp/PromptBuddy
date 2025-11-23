@@ -16,7 +16,7 @@ import os
 
 # --- Page Config ---
 st.set_page_config(
-    page_title="PromptBuddy - By Bilota AI",
+    page_title="Gemini 3 Architect - By Bilota AI",
     page_icon="🧪",
     layout="wide",
     initial_sidebar_state="expanded",

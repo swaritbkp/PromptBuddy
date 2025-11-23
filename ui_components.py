@@ -216,7 +216,7 @@ def render_sidebar():
                 st.markdown("<div style='font-size: 3rem;'>🐱</div>", unsafe_allow_html=True)
         
         with col_title:
-            st.markdown("<h3 style='margin:0; padding-top: 10px;'>PromptBuddy</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='margin:0; padding-top: 10px;'>Gemini 3 Architect</h3>", unsafe_allow_html=True)
             st.caption("By Bilota AI")
 
         st.divider()
@@ -248,8 +248,8 @@ def render_about_page():
     <div style="background: linear-gradient(135deg, #800020 0%, #4a0012 100%); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem;">
         <h2 style="color: #FFD700; margin-top: 0;">Our Mission</h2>
         <p style="font-size: 1.2rem; line-height: 1.6;">
-            At Bilota AI, we believe in the power of <strong>human-AI collaboration</strong>. 
-            Our mission is to democratize prompt engineering, making it accessible, intuitive, and powerful for everyone.
+            At Bilota AI, we are building the future of **Human-AI Symbiosis**. 
+            Our mission is to empower creators to harness the full reasoning potential of **Gemini 3**, making advanced prompt engineering accessible to everyone.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -269,9 +269,9 @@ def render_about_page():
     with col2:
         st.subheader("🚀 What We Do")
         st.markdown("""
-        - **PromptBuddy**: Your personal AI prompt assistant.
-        - **Bilota Vision**: Advanced image analysis tools.
-        - **Bilota Enterprise**: Custom AI solutions for business.
+        - **Gemini 3 Architect**: The ultimate prompt engineering studio.
+        - **Bilota Vision**: Next-gen image analysis.
+        - **Bilota Enterprise**: Custom AI solutions.
         
         **Contact Us:** [Swarit.bkp@gmail.com](mailto:Swarit.bkp@gmail.com)
         """)
