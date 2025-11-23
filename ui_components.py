@@ -220,17 +220,10 @@ def render_sidebar():
             st.caption("By Bilota AI")
 
         st.divider()
-
-        # API Key Selection
-        use_own_key = st.checkbox("🔑 Use My API Key", value=st.session_state.get("use_own_key", False))
-        st.session_state.use_own_key = use_own_key
-
-        if use_own_key:
-            st.session_state.user_api_key = st.text_input("Your Gemini API Key", type="password", value=st.session_state.get("user_api_key", ""))
-            st.session_state.selected_model = "gemini-1.5-flash"
-        else:
-            st.info("✅ Using Bilota System Key")
-            st.session_state.selected_model = "gemini-1.5-flash"
+        
+        # Always use system Gemini API key
+        st.info("✅ Using Bilota AI System")
+        st.session_state.selected_model = "gemini-1.5-flash"
         
         st.divider()
         
