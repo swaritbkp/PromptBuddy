@@ -14,21 +14,6 @@ from datetime import datetime
 import io
 import PyPDF2
 from PIL import Image
-from typing import Optional, Dict, List, Any, Union, Tuple
-
-# --- Helper Functions ---
-
-def get_api_key() -> Optional[str]:
-    """Get API key from secrets or user input"""
-    if "use_own_key" in st.session_state and st.session_state.use_own_key and "user_api_key" in st.session_state:
-        return st.session_state.user_api_key
-    try:
-        return st.secrets["GEMINI_API_KEY"]
-    except Exception:
-        return None
-
-def call_gemini(prompt: str, model_name: str = "gemini-1.5-flash", system_instruction: Optional[str] = None) -> str:
-    """
     Call Gemini API with error handling.
     
     Args:

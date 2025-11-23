@@ -9,7 +9,7 @@ import os
 try:
     import toml
     secrets = toml.load(".streamlit/secrets.toml")
-    api_key = secrets["GEMINI_API_KEY"]
+    api_key = secrets["gemini"]["api_key"]
 except:
     print("Could not load secrets.toml")
     api_key = os.getenv("GEMINI_API_KEY")
