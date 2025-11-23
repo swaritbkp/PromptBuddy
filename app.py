@@ -54,13 +54,24 @@ if "current_project" not in st.session_state:
 
 # Load History
 if not st.session_state.prompt_history:
-    # Try to load from local file if empty
-    try:
-        if os.path.exists("history.json"):
-            with open("history.json", "r") as f:
-                st.session_state.prompt_history = json.load(f)
-    except:
-        pass
+    # 1. Try Cloud History if logged in
+    if "user" in st.session_state and st.session_state.user and not st.session_state.user.get("local"):
+        try:
+            history, msg = utils.load_history_from_firestore(st.session_state.user["uid"])
+            if history:
+                st.session_state.prompt_history = history
+                # st.toast(f"☁️ {msg}") # Optional: Notify user
+        except Exception as e:
+            print(f"Error loading cloud history: {e}")
+
+    # 2. Fallback to Local History if still empty
+    if not st.session_state.prompt_history:
+        try:
+            if os.path.exists("history.json"):
+                with open("history.json", "r") as f:
+                    st.session_state.prompt_history = json.load(f)
+        except:
+            pass
 
 # --- Render UI ---
 
