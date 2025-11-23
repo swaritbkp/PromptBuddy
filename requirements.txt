@@ -1,0 +1,10 @@
+streamlit
+google-generativeai
+plotly
+PyPDF2
+requests
+pillow
+pandas
+textstat
+pyperclip
+firebase-admin

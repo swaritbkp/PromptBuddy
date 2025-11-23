@@ -1,0 +1,10 @@
+{
+    "_comment": "Firebase Web SDK Configuration - Get this from Firebase Console > Project Settings > Your apps > Web app",
+    "apiKey": "YOUR_API_KEY_HERE",
+    "authDomain": "promptbuddy-app.firebaseapp.com",
+    "projectId": "promptbuddy-app",
+    "storageBucket": "promptbuddy-app.firebasestorage.app",
+    "messagingSenderId": "YOUR_SENDER_ID",
+    "appId": "YOUR_APP_ID",
+    "_instructions": "Replace the placeholders above with your actual Firebase Web SDK config. You can find this in Firebase Console > Project Settings > General > Your apps section."
+}

@@ -1,0 +1,224 @@
+{
+    "Marketing": [
+        {
+            "name": "Product Launch Email",
+            "prompt": "You are a marketing copywriter. Write a product launch email for [PRODUCT_NAME] that:\n- Opens with a compelling hook\n- Highlights 3 key benefits\n- Includes social proof\n- Ends with clear CTA\n- Maximum 200 words\n\nProduct details: [DESCRIBE_PRODUCT]",
+            "tags": [
+                "email",
+                "launch",
+                "b2b"
+            ],
+            "category": "Marketing"
+        },
+        {
+            "name": "Social Media Campaign",
+            "prompt": "Create a 7-day social media campaign for [BRAND/PRODUCT]:\n- Platform: [Instagram/LinkedIn/Twitter]\n- Goal: [Awareness/Leads/Sales]\n- Tone: [Professional/Casual/Witty]\n- Target Audience: [DESCRIBE]\n\nFor each day, provide:\n1. Post caption (with hooks)\n2. Hashtag strategy (5-10 tags)\n3. Visual description\n4. Best posting time",
+            "tags": [
+                "social",
+                "campaign",
+                "strategy"
+            ],
+            "category": "Marketing"
+        },
+        {
+            "name": "SEO Blog Post Outline",
+            "prompt": "You are an SEO expert. Create a detailed blog post outline for the keyword '[TARGET_KEYWORD]':\n\n1. Title (compelling + keyword-rich)\n2. Meta description (155 chars max)\n3. H2 and H3 headings (keyword variations)\n4. Key points for each section\n5. Internal linking opportunities\n6. FAQ section (3-5 questions)\n7. Conclusion with CTA\n\nTarget word count: 1500-2000 words\nTarget audience: [DESCRIBE]",
+            "tags": [
+                "seo",
+                "content",
+                "blog"
+            ],
+            "category": "Marketing"
+        },
+        {
+            "name": "Customer Persona Builder",
+            "prompt": "Analyze this data and create 3 detailed customer personas:\n\n[PASTE_CUSTOMER_DATA]\n\nFor each persona, provide:\n- Name and photo description\n- Demographics (age, location, job, income)\n- Goals and motivations\n- Pain points and challenges\n- Preferred channels\n- Objections to overcome\n- Messaging angles that resonate",
+            "tags": [
+                "persona",
+                "research",
+                "strategy"
+            ],
+            "category": "Marketing"
+        }
+    ],
+    "Code": [
+        {
+            "name": "Code Review",
+            "prompt": "You are a senior software engineer. Review this code for:\n\n```[LANGUAGE]\n[PASTE_CODE]\n```\n\nProvide:\n1. **Bugs/Issues**: List any errors or potential bugs\n2. **Performance**: Suggest optimizations\n3. **Security**: Identify vulnerabilities\n4. **Best Practices**: Violations and recommendations\n5. **Readability**: How to improve clarity\n6. **Refactored Version**: Rewrite the problematic sections\n\nBe specific with line numbers and explanations.",
+            "tags": [
+                "review",
+                "debugging",
+                "optimization"
+            ],
+            "category": "Code"
+        },
+        {
+            "name": "API Documentation Generator",
+            "prompt": "Generate comprehensive API documentation for this endpoint:\n\n**Method**: [GET/POST/PUT/DELETE]\n**URL**: [ENDPOINT_URL]\n**Purpose**: [DESCRIBE]\n\nInclude:\n1. Description\n2. Authentication requirements\n3. Request parameters (with types, required/optional)\n4. Request body schema (JSON example)\n5. Response schema (success + error cases)\n6. Status codes\n7. Example cURL request\n8. Example responses\n9. Rate limiting info\n10. Common errors and troubleshooting",
+            "tags": [
+                "documentation",
+                "api",
+                "backend"
+            ],
+            "category": "Code"
+        },
+        {
+            "name": "Test Case Generator",
+            "prompt": "You are a QA engineer. Generate comprehensive test cases for this function:\n\n```[LANGUAGE]\n[PASTE_FUNCTION_CODE]\n```\n\nCreate test cases for:\n1. **Happy Path**: Expected inputs and outputs\n2. **Edge Cases**: Boundary values, empty inputs, null\n3. **Error Handling**: Invalid inputs, exceptions\n4. **Performance**: Large datasets, stress testing\n5. **Security**: Injection attacks, validation\n\nFormat: Test name, input, expected output, actual output, pass/fail",
+            "tags": [
+                "testing",
+                "qa",
+                "unit-tests"
+            ],
+            "category": "Code"
+        },
+        {
+            "name": "SQL Query Optimizer",
+            "prompt": "Analyze and optimize this SQL query:\n\n```sql\n[PASTE_QUERY]\n```\n\nDatabase info:\n- DBMS: [PostgreSQL/MySQL/SQL Server]\n- Table sizes: [DESCRIBE]\n- Indexes: [LIST_INDEXES]\n\nProvide:\n1. Performance analysis (explain plan)\n2. Identified bottlenecks\n3. Optimized query (with explanation)\n4. Index recommendations\n5. Expected performance improvement (%)\n6. Alternative approaches (if any)",
+            "tags": [
+                "sql",
+                "optimization",
+                "database"
+            ],
+            "category": "Code"
+        },
+        {
+            "name": "Regex Pattern Builder",
+            "prompt": "Create a robust regex pattern for: [DESCRIBE_REQUIREMENT]\n\nExamples of valid inputs:\n- [EXAMPLE_1]\n- [EXAMPLE_2]\n- [EXAMPLE_3]\n\nExamples of invalid inputs:\n- [EXAMPLE_INVALID_1]\n- [EXAMPLE_INVALID_2]\n\nProvide:\n1. The regex pattern\n2. Explanation of each component\n3. Test cases (5 valid, 5 invalid)\n4. Edge cases to consider\n5. Language-specific implementation ([Python/JavaScript/Java])",
+            "tags": [
+                "regex",
+                "validation",
+                "pattern"
+            ],
+            "category": "Code"
+        }
+    ],
+    "Creative Writing": [
+        {
+            "name": "Story Plot Generator",
+            "prompt": "Generate a compelling story plot with the following elements:\n\n**Genre**: [Fantasy/Sci-Fi/Thriller/Romance]\n**Setting**: [TIME_PERIOD and LOCATION]\n**Themes**: [LIST_2-3_THEMES]\n\nCreate:\n1. **Protagonist**: Name, background, flaw, desire\n2. **Antagonist**: Motivation and connection to hero\n3. **Inciting Incident**: What kicks off the story\n4. **3-Act Structure**:\n   - Act 1: Setup and hook\n   - Act 2: Rising action, midpoint twist, complications\n   - Act 3: Climax and resolution\n5. **Subplots** (2-3 threads)\n6. **Character Arc**: How the protagonist changes\n7. **Unique Hook**: What makes this story stand out",
+            "tags": [
+                "story",
+                "plot",
+                "fiction"
+            ],
+            "category": "Creative Writing"
+        },
+        {
+            "name": "Dialogue Polish",
+            "prompt": "Improve this dialogue to make it more natural and engaging:\n\n[PASTE_DIALOGUE]\n\nContext: [SCENE_DESCRIPTION]\nCharacter personalities: [DESCRIBE_EACH]\nGoal of scene: [PURPOSE]\n\nRewrite focusing on:\n1. Subtext and tension\n2. Character voice distinctiveness\n3. Natural flow (interruptions, pauses)\n4. Show don't tell\n5. Remove exposition dumps\n6. Add emotional beats",
+            "tags": [
+                "dialogue",
+                "editing",
+                "character"
+            ],
+            "category": "Creative Writing"
+        },
+        {
+            "name": "World-Building Template",
+            "prompt": "Create a detailed world-building guide for a [GENRE] story:\n\n**Core Concept**: [1-SENTENCE_DESCRIPTION]\n\nDevelop:\n1. **Geography**: Maps, climate, key locations\n2. **History**: Major events, wars, eras\n3. **Cultures**: 2-3 distinct societies (customs, values, conflicts)\n4. **Magic/Technology System**: Rules, limitations, cost\n5. **Economy**: Currency, trade, resources\n6. **Politics**: Power structures, factions, tensions\n7. **Religion/Beliefs**: Gods, philosophies, rituals\n8. **Daily Life**: Food, clothing, occupations\n9. **Unique Elements**: What makes this world memorable\n10. **Story Hooks**: 5 potential conflicts arising from this world",
+            "tags": [
+                "worldbuilding",
+                "fantasy",
+                "scifi"
+            ],
+            "category": "Creative Writing"
+        },
+        {
+            "name": "Poetry Composer",
+            "prompt": "Write a [FORM] poem about [TOPIC]:\n\n**Form Options**: Sonnet, Haiku, Free Verse, Villanelle, Limerick\n**Tone**: [Melancholic/Joyful/Dark/Whimsical]\n**Themes**: [LIST_2-3]\n\nRequirements:\n- Rich imagery and sensory details\n- Metaphor and symbolism\n- Rhythm and musicality\n- Emotional resonance\n- Unique perspective or insight\n\nProvide 3 variations with different approaches.",
+            "tags": [
+                "poetry",
+                "creative",
+                "verse"
+            ],
+            "category": "Creative Writing"
+        }
+    ],
+    "Data Analysis": [
+        {
+            "name": "Data Interpretation",
+            "prompt": "Analyze this dataset and provide insights:\n\n[PASTE_DATA or DESCRIBE_DATASET]\n\nProvide:\n1. **Summary Statistics**: Mean, median, mode, std dev\n2. **Trends**: Patterns over time/categories\n3. **Correlations**: Relationships between variables\n4. **Outliers**: Anomalies and possible explanations\n5. **Segments**: Natural groupings in the data\n6. **Key Insights**: 3-5 actionable findings\n7. **Recommendations**: Next steps based on data\n8. **Visualizations**: Suggest 3 charts to create",
+            "tags": [
+                "analysis",
+                "insights",
+                "statistics"
+            ],
+            "category": "Data Analysis"
+        },
+        {
+            "name": "A/B Test Evaluator",
+            "prompt": "Evaluate this A/B test result:\n\n**Variant A**: [DESCRIBE]\n- Sample size: [N]\n- Conversion rate: [%]\n- Metric: [DEFINE]\n\n**Variant B**: [DESCRIBE]\n- Sample size: [N]\n- Conversion rate: [%]\n\n**Test Duration**: [DAYS]\n**Significance Level**: 95%\n\nProvide:\n1. Statistical significance (p-value, confidence interval)\n2. Winner declaration (or \"inconclusive\")\n3. Practical significance (% improvement)\n4. Sample size adequacy\n5. Potential confounding factors\n6. Recommendation: Ship/Iterate/Run Longer\n7. Next test ideas",
+            "tags": [
+                "ab-test",
+                "statistics",
+                "experimentation"
+            ],
+            "category": "Data Analysis"
+        },
+        {
+            "name": "Survey Design",
+            "prompt": "Design a survey to measure [OBJECTIVE]:\n\n**Target Audience**: [DESCRIBE]\n**Key Questions**: [WHAT_DO_YOU_WANT_TO_LEARN]\n**Constraints**: Maximum [N] questions, [N] minutes to complete\n\nCreate:\n1. **Introduction**: Purpose and privacy statement\n2. **Screening Questions**: Ensure right respondents\n3. **Core Questions** (10-15):\n   - Mix of multiple choice, Likert scale, open-ended\n   - No leading or biased questions\n   - Logical flow\n4. **Demographics**: Age, location, etc.\n5. **Analysis Plan**: How to interpret results\n6. **Sample Size**: How many responses needed",
+            "tags": [
+                "survey",
+                "research",
+                "questionnaire"
+            ],
+            "category": "Data Analysis"
+        }
+    ],
+    "Business": [
+        {
+            "name": "Business Plan Executive Summary",
+            "prompt": "Write an executive summary for a business plan:\n\n**Company**: [NAME]\n**Industry**: [SECTOR]\n**Product/Service**: [DESCRIPTION]\n\nInclude:\n1. **Problem**: What pain point are you solving?\n2. **Solution**: Your unique value proposition\n3. **Market Opportunity**: Size and growth\n4. **Business Model**: How you make money\n5. **Traction**: Current metrics/achievements\n6. **Competitive Advantage**: Why you'll win\n7. **Team**: Key personnel and expertise\n8. **Financial Highlights**: Revenue projections (3 years)\n9. **Funding Ask**: Amount and use of funds\n\nKeep to 1-2 pages, investor-ready.",
+            "tags": [
+                "business-plan",
+                "startup",
+                "pitch"
+            ],
+            "category": "Business"
+        },
+        {
+            "name": "SWOT Analysis",
+            "prompt": "Conduct a comprehensive SWOT analysis for:\n\n**Company/Project**: [NAME]\n**Industry**: [SECTOR]\n**Context**: [CURRENT_SITUATION]\n\nAnalyze:\n1. **Strengths**: Internal advantages (resources, capabilities, USPs)\n2. **Weaknesses**: Internal limitations (gaps, vulnerabilities)\n3. **Opportunities**: External factors to leverage (trends, partnerships)\n4. **Threats**: External risks (competition, regulations, disruption)\n\nFor each quadrant:\n- List 5-7 items\n- Rate impact (High/Medium/Low)\n- Provide strategic recommendations\n- Cross-reference (e.g., use Strength X to exploit Opportunity Y)",
+            "tags": [
+                "swot",
+                "strategy",
+                "planning"
+            ],
+            "category": "Business"
+        },
+        {
+            "name": "Competitive Analysis",
+            "prompt": "Perform a competitive analysis:\n\n**Your Company**: [NAME]\n**Competitors**: [LIST_3-5_COMPETITORS]\n**Market**: [DEFINE]\n\nFor each competitor, analyze:\n1. **Products/Services**: Features, pricing, positioning\n2. **Market Share**: Estimated % and trend\n3. **Strengths**: What they do well\n4. **Weaknesses**: Gaps you can exploit\n5. **Strategy**: Their go-to-market approach\n6. **Customer Sentiment**: Reviews, NPS, reputation\n\nSummarize:\n- Competitive landscape overview\n- Your differentiation strategy\n- Threats to monitor\n- Opportunities to capitalize",
+            "tags": [
+                "competition",
+                "research",
+                "market"
+            ],
+            "category": "Business"
+        }
+    ],
+    "Education": [
+        {
+            "name": "Lesson Plan Creator",
+            "prompt": "Create a detailed lesson plan:\n\n**Subject**: [TOPIC]\n**Grade Level**: [AGE_GROUP]\n**Duration**: [MINUTES]\n**Learning Objectives**: [WHAT_STUDENTS_WILL_LEARN]\n\nInclude:\n1. **Introduction** (5-10 min): Hook and context\n2. **Direct Instruction** (15-20 min): Key concepts\n3. **Guided Practice** (10-15 min): Examples with support\n4. **Independent Practice** (15-20 min): Student activities\n5. **Assessment**: How to measure understanding\n6. **Differentiation**: Support for diverse learners\n7. **Materials**: Required resources\n8. **Homework**: Optional extension activity",
+            "tags": [
+                "teaching",
+                "curriculum",
+                "education"
+            ],
+            "category": "Education"
+        },
+        {
+            "name": "Study Guide Generator",
+            "prompt": "Generate a comprehensive study guide for:\n\n**Topic**: [SUBJECT/CHAPTER]\n**Level**: [High School/College/Professional]\n**Exam Date**: [IF_APPLICABLE]\n\nCreate:\n1. **Key Concepts**: Main ideas with definitions\n2. **Important Formulas/Rules**: With examples\n3. **Practice Questions** (20-30):\n   - Multiple choice (10)\n   - Short answer (10)\n   - Essay prompts (5)\n4. **Mnemonics**: Memory aids for complex info\n5. **Common Mistakes**: What to avoid\n6. **Study Schedule**: Week-by-week breakdown\n7. **Additional Resources**: Books, videos, websites",
+            "tags": [
+                "study",
+                "exam-prep",
+                "learning"
+            ],
+            "category": "Education"
+        }
+    ]
+}
