@@ -207,6 +207,8 @@ def render_sidebar():
     """Render the application sidebar"""
     with st.sidebar:
         # Cat Mascot + Branding
+        col_logo, col_title = st.columns([1, 3])
+        
         with col_logo:
             if os.path.exists("assets/mascot_cat.png"):
                 st.image("assets/mascot_cat.png", width=60)
