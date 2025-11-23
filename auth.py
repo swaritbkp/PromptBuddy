@@ -38,7 +38,7 @@ def oauth_login():
     db, auth_client, status, msg = firebase_config.initialize_firebase()
     
     if status == "local":
-        st.info("☁️ Running in Local Mode. Firebase not configured.")
+        st.info("☁️ Running in Local Mode (Offline). Add secrets to enable Cloud Sync.")
         
         col1, col2 = st.columns(2)
         with col1:

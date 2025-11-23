@@ -14,6 +14,7 @@ import logic
 import json
 import os
 
+# Force Reload Trigger: 1
 # --- Page Config ---
 st.set_page_config(
     page_title="Gemini 3 Architect - By Bilota AI",
