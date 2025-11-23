@@ -1,3 +1,6 @@
+# Copyright (c) 2024 Bilota AI. All rights reserved.
+# Contact: Swarit.bkp@gmail.com
+
 """
 Utility functions for PromptBuddy
 Handles export/import, versioning, metrics, and helpers

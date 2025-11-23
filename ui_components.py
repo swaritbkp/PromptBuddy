@@ -1,3 +1,6 @@
+# Copyright (c) 2024 Bilota AI. All rights reserved.
+# Contact: Swarit.bkp@gmail.com
+
 """
 UI Components for PromptBuddy
 Handles styling, sidebar, and common UI elements.
@@ -204,11 +207,27 @@ def render_sidebar():
     """Render the application sidebar"""
     with st.sidebar:
         # Cat Mascot + Branding
-        col_logo, col_title = st.columns([1, 3])
+        with col_logo:
+            if os.path.exists("assets/mascot_cat.png"):
+                st.image("assets/mascot_cat.png", width=60)
+            else:
+                st.markdown("<div style='font-size: 3rem;'>🐱</div>", unsafe_allow_html=True)
+        
+        with col_title:
+            st.markdown("<h3 style='margin:0; padding-top: 10px;'>PromptBuddy</h3>", unsafe_allow_html=True)
+            st.caption("By Bilota AI")
+
+        st.divider()
+
+        # API Key Selection
+        use_own_key = st.checkbox("🔑 Use My API Key", value=st.session_state.get("use_own_key", False))
+        st.session_state.use_own_key = use_own_key
+
+        if use_own_key:
             st.session_state.user_api_key = st.text_input("Your Gemini API Key", type="password", value=st.session_state.get("user_api_key", ""))
             st.session_state.selected_model = "gemini-1.5-flash"
         else:
-            st.info("✅ Using default API key")
+            st.info("✅ Using Bilota System Key")
             st.session_state.selected_model = "gemini-1.5-flash"
         
         st.divider()

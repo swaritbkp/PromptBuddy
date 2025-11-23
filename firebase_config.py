@@ -1,3 +1,6 @@
+# Copyright (c) 2024 Bilota AI. All rights reserved.
+# Contact: Swarit.bkp@gmail.com
+
 """
 Firebase Configuration Manager for PromptBuddy
 Complete production-ready setup with Web SDK support

@@ -1,3 +1,6 @@
+# Copyright (c) 2024 Bilota AI. All rights reserved.
+# Contact: Swarit.bkp@gmail.com
+
 """
 Core Business Logic for PromptBuddy
 Handles all AI interactions, prompt generation, and analysis.

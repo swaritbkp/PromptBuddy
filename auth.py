@@ -1,3 +1,6 @@
+# Copyright (c) 2024 Bilota AI. All rights reserved.
+# Contact: Swarit.bkp@gmail.com
+
 """
 Authentication Module for PromptBuddy
 OAuth Login (Google & Apple) only.

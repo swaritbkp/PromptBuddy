@@ -1,3 +1,6 @@
+# Copyright (c) 2024 Bilota AI. All rights reserved.
+# Contact: Swarit.bkp@gmail.com
+
 """
 Tools UI Module for PromptBuddy
 Renderers for the various tool tabs.
