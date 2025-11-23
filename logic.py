@@ -31,9 +31,17 @@ def get_api_key() -> Optional[str]:
     except:
         pass
         
+    # Try GOOGLE_API_KEY (Common default)
+    try:
+        return st.secrets["GOOGLE_API_KEY"]
+    except:
+        pass
+        
     # Try Environment Variable
     if os.environ.get("GEMINI_API_KEY"):
         return os.environ.get("GEMINI_API_KEY")
+    if os.environ.get("GOOGLE_API_KEY"):
+        return os.environ.get("GOOGLE_API_KEY")
         
     # FALLBACK: Return None if not found
     return None
@@ -52,7 +60,9 @@ def call_gemini(prompt: str, model_name: str = "gemini-1.5-flash", system_instru
     """
     api_key = get_api_key()
     if not api_key:
-        return "⚠️ API Key required. Enable BYOK in sidebar or check secrets."
+        # Debug info for the user
+        available_keys = list(st.secrets.keys()) if hasattr(st, "secrets") else "No secrets found"
+        return f"⚠️ API Key required. Checked [gemini]api_key, GEMINI_API_KEY, GOOGLE_API_KEY.\nAvailable secret sections: {available_keys}.\nPlease configure Streamlit Cloud secrets."
     
     genai.configure(api_key=api_key)
     
